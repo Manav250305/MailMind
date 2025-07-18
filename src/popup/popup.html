@@ -1,0 +1,70 @@
+<!-- src/popup/popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Email Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>AI Email Assistant</h1>
+      <button id="settingsBtn" class="icon-btn">⚙️</button>
+    </header>
+    
+    <div id="authSection" class="section" style="display: none;">
+      <div class="auth-card">
+        <h2>Connect Your Gmail</h2>
+        <p>Grant access to analyze your emails and create tasks</p>
+        <button id="authBtn" class="primary-btn">Connect Gmail</button>
+      </div>
+    </div>
+    
+    <div id="mainSection" class="section" style="display: none;">
+      <div class="tabs">
+        <button id="tasksTab" class="tab active">Tasks</button>
+        <button id="calendarTab" class="tab">Calendar</button>
+        <button id="insightsTab" class="tab">Insights</button>
+      </div>
+      
+      <div id="tasksView" class="tab-content">
+        <div class="task-filters">
+          <select id="filterSelect">
+            <option value="all">All Tasks</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+            <option value="overdue">Overdue</option>
+          </select>
+        </div>
+        
+        <div id="tasksList" class="tasks-list">
+          <!-- Tasks will be populated here -->
+        </div>
+      </div>
+      
+      <div id="calendarView" class="tab-content" style="display: none;">
+        <div id="calendarContainer">
+          <!-- Calendar integration will be added here -->
+        </div>
+      </div>
+      
+      <div id="insightsView" class="tab-content" style="display: none;">
+        <div id="insightsContainer">
+          <!-- Analytics and insights will be added here -->
+        </div>
+      </div>
+    </div>
+    
+    <div id="loadingSection" class="section">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
